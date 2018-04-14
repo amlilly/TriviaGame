@@ -13,30 +13,30 @@ $(document).on('click','#reset',function(){
 
 
 var questions = [{
-    question: "Who?",
-    answers: ["Answer One", "Answer Two", "Answer Three", "Answer Four"],
-    correctAnswer: "Answer Three",
-    image: "assets/images/whatever.gif"
+    question: "Who was the first President of the United States?",
+    answers: ["Thomas Jefferson", "Andrew Jackson", "George Washington", "Abraham Lincoln"],
+    correctAnswer: "George Washington",
+    image: "assets/images/George_Washington.jpg"
 }, {
-    question: "What?",
-    answers: ["Answer One", "Answer Two", "Answer Three", "Answer Four"],
-    correctAnswer: "Answer Two",
-    image: "assets/images/whatever.gif"
+    question: "What city served as the nation's first capital?",
+    answers: ["Washington D.C.", "New York City", "Boston", "Philidelphia"],
+    correctAnswer: "New York City",
+    image: "assets/images/Federal_Hall.jpg"
 }, {
-    question: "When?",
-    answers: ["Answer One", "Answer Two", "Answer Three", "Answer Four"],
-    correctAnswer: "Answer Four",
-    image: "assets/images/whatever.gif"
+    question: "When was the Declaration of Independence signed?",
+    answers: ["1812", "1786", "1800", "1776"],
+    correctAnswer: "1776",
+    image: "assets/images/Declaration_of_Independence.jpg"
 }, {
-    question: "Where?",
-    answers: ["Answer One", "Answer Two", "Answer Three", "Answer Four"],
-    correctAnswer: "Answer One",
-    image: "assets/images/whatever.gif"
+    question: "Where was the Declaration of Indepence signed?",
+    answers: ["Independence Hall", "Federal Hall", "the Capitol Building", "Trinity Church"],
+    correctAnswer: "Independence Hall",
+    image: "assets/images/Independence_Hall.jpg"
 }, {
-    question: "Why?",
-    answers: ["Answer One", "Answer Two", "Answer Three", "Answer Four", "Correct Answer"],
-    correctAnswer: "Correct Answer",
-    image: "assets/images/whatever.gif"
+    question: "Which country gifted the Statue of Liberty to the United States?",
+    answers: ["Italy", "Enlgand", "Spain", "France"],
+    correctAnswer: "France",
+    image: "assets/images/Statue_of_Liberty.jpg"
 }];
 
 var game = {
@@ -104,6 +104,7 @@ var game = {
         clearInterval(timer);
         game.correct++;
         $('#subwrapper').html('<h2>YOU GOT IT RIGHT!</h2>');
+        $('#subwrapper').append('<img src="' + questions[game.currentQuestion].image + '" />');
         if(game.currentQuestion==questions.length-1){
             setTimeout(game.results, 3*1000);
         } else {
